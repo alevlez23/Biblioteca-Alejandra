@@ -1,0 +1,45 @@
+.btn {
+  font-family: "Inter", sans-serif;
+  padding: 12px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+}
+
+/* 🔥 Neon Pulse (principal) */
+.btn--neon {
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 10px #0ff, 0 0 25px #0ff;
+  border: none;
+}
+
+.btn--neon:hover {
+  box-shadow: 0 0 15px #0ff, 0 0 35px #0ff;
+  transform: scale(1.05);
+}
+
+/* 💙 Cyan Outline (secundario) */
+.btn--cyan {
+  background: transparent;
+  color: #0ff;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 10px #0ff inset;
+}
+
+.btn--cyan:hover {
+  background: rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 15px #0ff inset;
+}
+
+/* ⚫ Glow Off (deshabilitado) */
+.btn--off {
+  background: #222;
+  color: #555;
+  border: 2px solid #333;
+  cursor: not-allowed;
+  box-shadow: none;
+}

@@ -1,0 +1,300 @@
+/* ============================
+   VARIABLES DEL TEMA PREMIUM
+   ============================ */
+:root {
+  --primary: #00eaff;
+  --primary-soft: rgba(0, 234, 255, 0.25);
+  --dark: #020814;
+  --glass: rgba(255, 255, 255, 0.04);
+  --text: #d9eaff;
+  --white: #fff;
+  --radius: 18px;
+}
+
+/* ============================
+   FONDO GLOBAL
+   ============================ */
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #031c32, #000915);
+  font-family: "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+.page {
+  width: 100%;
+  padding-bottom: 80px;
+}
+
+/* ============================
+   HERO SECTION
+   ============================ */
+.hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+  margin-bottom: 40px;
+  background: linear-gradient(to bottom, rgba(0, 234, 255, 0.06), transparent);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-shadow: 0 0 15px var(--primary);
+}
+
+.hero-subtitle {
+  opacity: 0.85;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* ICONOS PREMIUM */
+.hero-icons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-icons i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  filter: drop-shadow(0 0 10px var(--primary-soft));
+  animation: float 3s infinite ease-in-out, glowPulse 2.6s infinite ease-in-out;
+  transition: 0.3s ease;
+}
+
+.hero-icons i:hover {
+  transform: translateY(-6px) scale(1.15);
+  filter: drop-shadow(0 0 18px var(--primary));
+}
+
+/* Animación de flotación */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Efecto glow */
+@keyframes glowPulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.55; }
+  100% { opacity: 1; }
+}
+
+/* ============================
+   SECCIONES
+   ============================ */
+.section {
+  padding: 40px 20px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px var(--primary-soft);
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* ============================
+   TARJETAS
+   ============================ */
+.ui-card {
+  background: var(--glass);
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px solid rgba(0, 234, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 18px rgba(0, 234, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+.ui-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 234, 255, 0.25);
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+.footer {
+  text-align: center;
+  padding: 40px 0 25px;
+  margin-top: 60px;
+  opacity: 0.6;
+}
+
+/* ============================
+   BOTONES PREMIUM
+   ============================ */
+.ui-btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.ui-btn.primary {
+  background: var(--primary);
+  color: black;
+  font-weight: 600;
+}
+
+.ui-btn.primary:hover {
+  box-shadow: 0 0 18px var(--primary);
+  transform: translateY(-3px);
+}
+
+.ui-btn.outline:hover {
+  background: var(--primary);
+  color: black;
+  box-shadow: 0 0 12px var(--primary);
+}
+
+.ui-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ============================
+   MODAL
+   ============================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: var(--glass);
+  border: 1px solid var(--primary-soft);
+  padding: 25px;
+  border-radius: var(--radius);
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+}
+
+/* BADGE */
+.badge-neon {
+  background: var(--primary);
+  color: black;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.tip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  background: var(--glass);
+  border: 1px solid var(--primary);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.tooltip:hover .tip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* INPUT */
+.ui-input {
+  width: 100%;
+  padding: 12px;
+  background: var(--glass);
+  border: 1px solid var(--primary-soft);
+  border-radius: var(--radius);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.ui-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 12px var(--primary);
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tab {
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  background: var(--glass);
+  border: 1px solid var(--primary-soft);
+  color: var(--primary);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: var(--primary);
+  color: black;
+  font-weight: 600;
+}
+
+/* ACCORDION */
+.accordion-header {
+  background: var(--glass);
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--primary-soft);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-body {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+}
+
+/* ALERT */
+.alert-box {
+  background: rgba(0,234,255,0.1);
+  border-left: 4px solid var(--primary);
+  padding: 12px;
+  border-radius: var(--radius);
+  color: var(--primary);
+  backdrop-filter: blur(10px);
+}
